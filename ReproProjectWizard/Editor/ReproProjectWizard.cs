@@ -275,6 +275,9 @@ public class ReproProjectWizard : EditorWindow
         {
             m_IsInitialized = true;
             m_CurrentProjectPath = Path.GetDirectoryName(Application.dataPath);
+            
+            
+            
             InitializeItems(m_ProjectItems, m_DefaultAssets);
 
             LoadSettings();
@@ -379,6 +382,9 @@ public class ReproProjectWizard : EditorWindow
         if (m_Settings == null)
         {
             m_Settings = ScriptableObject.CreateInstance<ReproProjectSettings>();
+            var directoryName = Path.GetDirectoryName(SettingsPath);
+            if (Directory.Exists(directoryName) == false)
+                Directory.CreateDirectory(directoryName);
             AssetDatabase.CreateAsset(m_Settings, SettingsPath);
         }
 
@@ -669,7 +675,7 @@ public class ReproProjectWizard : EditorWindow
 
         // scale if required
         Texture2D destTex = sourceTex;
-        if (scaleFactor != 1)
+        if (scaleFactor != 1 && sourceTex.width > scaleFactor && sourceTex.height > scaleFactor)
         {
             destTex = ScaleTexture2D(sourceTex, scaleFactor);
         }

@@ -1,0 +1,8 @@
+{
+  "name": "repro.unity.reprowizard",
+  "version": "1.0.0",
+  "type": "library",
+  "unity": "2019.3",
+  "displayName": "repro pro wizard",
+  "description": "In order to submit bugs to Unity we request a project that reproduces the problem is included with the bug report. Often, creating a small cutdown project that shows the issue can take a lot of work. This tool is meant to simplify that process by quickly creating a new project that contains a small subset of the assets in your full project."
+}
