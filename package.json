@@ -1,6 +1,6 @@
 {
   "name": "repro.unity.reprowizard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "library",
   "unity": "2019.3",
   "displayName": "repro pro wizard",
